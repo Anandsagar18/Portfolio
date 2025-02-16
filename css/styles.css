@@ -1,0 +1,464 @@
+/* CSS Variables for easy customization */
+:root {
+    --primary-color: #0ff;
+    --accent-color: #0bf;
+    --bg-color: #111;
+    --text-color: #eee;
+    --light-bg: #f9f9f9;
+    --gradient-bg: linear-gradient(135deg, #0ff, #0bf);
+  }
+  
+  html {
+    scroll-padding-top: 120px;
+  }
+  
+  /* Reset & Base Styles */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--bg-color);
+    overflow-x: hidden;
+  }
+  
+  /* Navbar with Animated Gradient Border */
+  header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0, 0, 0, 0.85);
+    border-bottom: 3px solid transparent;
+    background-clip: padding-box;
+    z-index: 1000;
+    animation: borderGradient 5s infinite linear;
+  }
+  @keyframes borderGradient {
+    0% { border-color: var(--primary-color); }
+    50% { border-color: var(--accent-color); }
+    100% { border-color: var(--primary-color); }
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: var(--text-color);
+  }
+  .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 5px var(--primary-color);
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  .nav-links li {
+    margin-left: 2rem;
+  }
+  .nav-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s, text-shadow 0.3s;
+  }
+  .nav-links li a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 8px var(--accent-color);
+  }
+  /* Hamburger Menu (Mobile) */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  .hamburger span {
+    height: 3px;
+    width: 25px;
+    background: var(--text-color);
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    text-align: left;
+  }
+  /* Dark Mode Toggle Button */
+  .dark-mode-toggle {
+    padding: 0.5rem 1rem;
+    background: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 1rem;
+    color: var(--bg-color);
+  }
+  
+  /* Hero Section with Animated Gradient Overlay */
+  .hero {
+    height: 100vh;
+    background: var(--gradient-bg), url('../images/hero-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: 60px;
+    animation: bgPulse 10s infinite alternate;
+  }
+  @keyframes bgPulse {
+    from { filter: brightness(1); }
+    to { filter: brightness(1.2); }
+  }
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--text-color);
+    animation: fadeIn 1s ease-out;
+  }
+  .hero-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+  }
+  .subtext {
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+  
+  /* Section Base Styles */
+  section {
+    padding: 4rem 0;
+  }
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+/* Modern Techy Section Cards with Reduced Effects for Light Mode */
+.section-card {
+    position: relative;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem auto;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.08); /* Slightly increased opacity for less GPU strain */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .section-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #00ffff, #00bfff, #0099ff, #00ffff);
+    background-size: 400%;
+    z-index: -2;
+    filter: blur(4px); /* Reduced blur intensity from 8px */
+    animation: gradientShift 8s ease infinite; /* Slower animation duration */
+    opacity: 0.6; /* Lower opacity for a subtler effect */
+  }
+  
+  .section-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    backdrop-filter: blur(5px); /* Reduced from 10px */
+    z-index: -1;
+    border-radius: 15px;
+    opacity: 0.5; /* Lowered for a more subtle glass effect */
+  }
+  
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .section-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  }
+  
+  
+  /* Profile Section */
+  .profile-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+  }
+  
+  /* Education Section */
+  .table-container {
+    overflow-x: auto;
+    margin: 0 auto;
+  }
+  
+  .education-table {
+    width: 100%;
+    max-width: 800px; /* Limits table width for better responsiveness */
+    border-collapse: collapse;
+    margin: 2rem auto; /* Centers the table */
+  }
+  .education-table th,
+  .education-table td {
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    text-align: center;
+  }
+  
+  
+  /* Projects Section */
+  .projects h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+  }
+  .project-item {
+    background: var(--light-bg);
+    color: #333;
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    text-align: left;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .project-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  .project-item h3 {
+    margin-bottom: 0.5rem;
+  }
+  .project-item p,
+  .project-item ul {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  .project-item ul {
+    margin-left: 1rem;
+    list-style-type: disc;
+  }
+  
+  /* Skills Section */
+  .skills-list p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+  .skills-progress {
+    margin-top: 2rem;
+  }
+  .skill h3 {
+    margin-bottom: 0.5rem;
+  }
+  .progress-bar {
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+  }
+  .progress {
+    background: var(--accent-color);
+    padding: 0.5rem;
+    color: #fff;
+    text-align: right;
+  }
+  
+  /* Extracurricular Activities Section */
+  .activity-item {
+    background: var(--light-bg);
+    color: #333;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 4px solid var(--accent-color);
+    text-align: left;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+  }
+  .activity-item:hover {
+    transform: translateY(-3px);
+  }
+  .activity-item h3 {
+    margin-bottom: 0.5rem;
+  }
+  .activity-item span {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* Contact Section */
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  .contact-form button {
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  .contact-form button:hover {
+    background: #0dcaf0;
+  }
+  
+  /* Footer */
+  footer {
+    background: #000;
+    color: var(--text-color);
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+  /* Back to Top Button - Updated */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(45deg, #00bfff, #00ffff);
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1001;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  }
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  .back-to-top:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+  }
+  
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Dark Mode Overrides */
+  body.dark-mode {
+    background: #000 !important;
+    color: #eee !important;
+  }
+  body.dark-mode header,
+  body.dark-mode footer {
+    background: #111 !important;
+  }
+  body.dark-mode .nav-links li a {
+    color: #eee !important;
+  }
+  body.dark-mode .dark-mode-toggle {
+    background: var(--primary-color) !important;
+  }
+  body.dark-mode .section-card {
+    background: #1a1a1a !important;
+    color: #eee !important;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1) !important;
+  }
+  body.dark-mode .section-card::before {
+    background: linear-gradient(45deg, #00aaff, #0088ff, #0066ff, #00aaff) !important;
+  }
+  body.dark-mode .section-card::after {
+    background: inherit !important;
+    opacity: 0.8 !important;
+  }
+  body.dark-mode .education-table th,
+  body.dark-mode .education-table td {
+    border: 1px solid #444 !important;
+    background: #1a1a1a !important;
+    color: #eee !important;
+  }
+  body.dark-mode .contact-form input,
+  body.dark-mode .contact-form textarea {
+    background: #333 !important;
+    border: 1px solid #444 !important;
+    color: #eee !important;
+  }
+  body.dark-mode .project-item,
+  body.dark-mode .activity-item {
+    background: #1a1a1a !important;
+    color: #eee !important;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+    }
+    .hamburger {
+      display: flex;
+    }
+    .profile-content,
+    .project-item,
+    .activity-item {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Anandsagar Gaikwad - Portfolio</title>
+  <!-- Google Fonts for a techy vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">Anandsagar Gaikwad</div>
+      <ul class="nav-links">
+        <li><a href="#profile" class="nav-link">Profile</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#activities" class="nav-link">Extracurricular</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <button id="darkModeToggle" class="dark-mode-toggle">Toggle Dark Mode</button>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Typewriter Effect -->
+  <section id="hero" class="hero reveal">
+    <div class="hero-content">
+      <h1 id="typewriter"></h1>
+      <p class="subtext">Aspiring Computer Science Engineer & AI/ML Enthusiast</p>
+    </div>
+  </section>
+
+  <!-- Professional Profile Section -->
+  <section id="profile" class="profile reveal section-card">
+    <div class="container">
+      <h2>Professional Profile</h2>
+      <div class="profile-content">
+        <img src="images/Anandsagar_photo.jpg" alt="Profile Picture" class="profile-pic">
+        <div class="profile-details">
+          <h3>Anandsagar Gaikwad</h3>
+          <p>
+            A dedicated Computer Science student at Rajiv Gandhi Institute of Petroleum Technology with a passion for web technologies, machine learning, and innovative software solutions. Proven experience in developing AI-based projects and desktop applications, combined with strong leadership skills demonstrated through extracurricular roles.
+          </p>
+          <p>
+            <strong>Contact:</strong> +91-7218995749 | <a href="mailto:anandsagargaikwad18@gmail.com">anandsagargaikwad18@gmail.com</a>
+          </p>
+          <p>
+            <a href="https://www.linkedin.com/in/anandsagar-gaikwad-65429a280/" target="_blank">LinkedIn</a> |
+            <a href="https://github.com/Anandsagar18" target="_blank">GitHub</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Education Section -->
+<section id="education" class="education reveal section-card">
+    <div class="container">
+      <h2>Education</h2>
+      <div class="table-container">
+        <table class="education-table">
+          <thead>
+            <tr>
+              <th>Institution</th>
+              <th>Qualification</th>
+              <th>Details</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Rajiv Gandhi Institute of Petroleum Technology</td>
+              <td>B.Tech in Computer Science & Engineering</td>
+              <td>CPI: 7.14 (up to 3rd semester)</td>
+              <td>2023 – Present</td>
+            </tr>
+            <tr>
+              <td>Kendriya Vidyalaya Aurangabad</td>
+              <td>CBSE Secondary & Higher Secondary</td>
+              <td>89% (Secondary), 84% (Higher Secondary)</td>
+              <td>2020 – 2022</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects reveal section-card">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-item">
+        <h3>Link Shield</h3>
+        <p><strong>Technologies:</strong> Python, Scikit-Learn, Machine Learning</p>
+        <ul>
+          <li>Developed an AI solution with 92% accuracy to identify malicious URLs, integrated into a Chrome extension.</li>
+          <li>Collaborated with a team of 4 for the GeeksforGeeks Hackathon 2024.</li>
+          <li>Utilized Scikit-Learn to train and deploy a lightweight, high-performance model.</li>
+          <li>Tested with over 1,000 URLs, achieving high reliability and user trust.</li>
+        </ul>
+      </div>
+      <div class="project-item">
+        <h3>AI-Based Project Idea Suggestion System</h3>
+        <p><strong>Technologies:</strong> Python, CustomTkinter, Gemini API</p>
+        <ul>
+          <li>Built an AI tool that increased project idea generation efficiency by 50% using programming language and difficulty filters.</li>
+          <li>Designed an intuitive GUI with CustomTkinter and integrated Gemini API for personalized recommendations.</li>
+          <li>Achieved 90% positive feedback from initial user testing with 30 participants.</li>
+        </ul>
+      </div>
+      <div class="project-item">
+        <h3>Hotel Management System</h3>
+        <p><strong>Technologies:</strong> Python, MySQL, Tkinter</p>
+        <ul>
+          <li>Developed a desktop-based system that reduced manual booking time by 40%.</li>
+          <li>Implemented functionalities for room booking, customer management, and billing for 500+ records.</li>
+          <li>Designed an optimized MySQL database schema for scalability and efficient data handling.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Skills Section -->
+  <section id="skills" class="skills-section reveal section-card">
+    <div class="container">
+      <h2>Technical Skills</h2>
+      <div class="skills-list">
+        <p><strong>Programming Languages:</strong> C, C++, Python, MySQL</p>
+        <p><strong>Core Skills:</strong> Data Structures, Algorithms, Web Technologies, DBMS</p>
+        <p><strong>Frameworks & Tools:</strong> Tkinter, CustomTkinter, Flask, VS Code, PyCharm, Jupyter, Google Colab</p>
+        <p><strong>Frontend Development:</strong> HTML, CSS</p>
+        <p><strong>Version Control:</strong> Git, GitHub</p>
+      </div>
+      <div class="skills-progress">
+        <div class="skill">
+          <h3>Python</h3>
+          <div class="progress-bar">
+            <div class="progress" style="width: 90%;">90%</div>
+          </div>
+        </div>
+        <div class="skill">
+          <h3>HTML/CSS</h3>
+          <div class="progress-bar">
+            <div class="progress" style="width: 85%;">85%</div>
+          </div>
+        </div>
+        <div class="skill">
+          <h3>Machine Learning</h3>
+          <div class="progress-bar">
+            <div class="progress" style="width: 80%;">80%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extracurricular Activities Section -->
+  <section id="activities" class="activities reveal section-card">
+    <div class="container">
+      <h2>Extracurricular Activities</h2>
+      <div class="activity-item">
+        <h3>IEEE RGIPT Student Branch</h3>
+        <span>Technical Lead | 2023 – Present</span>
+        <ul>
+          <li>Led a team of 15 to organize over 10 technical and networking events, reaching 500+ participants.</li>
+          <li>Spearheaded a machine learning workshop with 100+ attendees, resulting in 80% hands-on project completion.</li>
+          <li>Designed a technical skill-building roadmap that increased hackathon participation by 50%.</li>
+        </ul>
+      </div>
+      <div class="activity-item">
+        <h3>Urjotsav 2024 - Annual Technical Festival of RGIPT</h3>
+        <span>Event Coordinator | 2024</span>
+        <ul>
+          <li>Coordinated 10+ events, boosting footfall by 30% compared to previous years.</li>
+          <li>Managed promotional campaigns that increased online engagement by 35%.</li>
+          <li>Contributed to making Urjotsav one of Northern India’s largest tech fests with 1,000+ attendees.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section with Form Validation -->
+  <section id="contact" class="contact reveal section-card">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <form action="#" method="post" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top">↑</button>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Anandsagar Gaikwad. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
